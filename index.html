@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AutoDrive</title><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIINfQ3H3n0GJwQYhYx0y0x3s8X4j0m8W0=" crossorigin="">
+</head>
+<body>
+<header><a class="brand" href="index.html">🛻 Mini Logistics</a><nav><a href="index.html">Home</a><a href="provider-login.html">Provider</a></nav></header>
+<main>
+<section class="hero"><div><span class="pill">Live vehicle discovery</span><h1>Find vehicles near you.</h1><p>No customer login required. Search active providers and view live locations.</p>
+<div class="search"><input id="search" placeholder="Vehicle number or provider name"><button onclick="searchProviders()">Search</button></div></div></section>
+<section><div class="section-head"><h2>Nearby active vehicles</h2><button class="ghost" onclick="locateMe()">Use my location</button></div><div id="map" class="map" aria-label="Live vehicle map"><div id="mapStatus" class="map-status">Loading map…</div></div><div id="vehicles" class="grid"></div></section>
+</main><footer>AutoDrive · Customer access</footer>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script type="module" src="app.js"></script>
+</body></html>

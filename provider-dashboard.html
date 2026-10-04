@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Provider Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <a class="brand" href="index.html">🛻 Mini Logistics</a>
+  <nav><button class="ghost" id="logout">Logout</button></nav>
+</header>
+
+<main>
+  <section class="dashboard">
+    <div class="panel">
+      <span class="pill">Provider Dashboard</span>
+      <div class="panel-title-row">
+        <div>
+          <h1 id="welcome">Welcome</h1>
+          <p class="muted">Manage your provider details and live vehicle status.</p>
+        </div>
+        <button id="editCard" class="edit-btn">✏️ Edit Card</button>
+      </div>
+
+      <div class="card provider-card">
+        <div class="card-topline">
+          <div>
+            <small class="eyebrow">PROVIDER CARD</small>
+            <b id="vehicle">Vehicle</b>
+          </div>
+          <span id="status" class="status">Checking…</span>
+        </div>
+        <div class="card-details">
+          <p><span>Card expiry</span><strong id="expiry">—</strong></p>
+          <p><span>Vehicle type</span><strong id="vehicleType">—</strong></p>
+          <p><span>Subscription</span><strong id="subscriptionStatus">—</strong></p>
+        </div>
+        <p id="remaining" class="remaining">—</p>
+      </div>
+
+      <div class="actions provider-location-actions">
+        <button id="stop" class="ghost">⏹ Stop</button>
+        <button id="start">▶ Start</button>
+      </div>
+    </div>
+
+    <div class="panel subscription-panel">
+      <div class="subscription-head">
+        <div>
+          <span class="pill subscription-pill">Membership</span>
+          <h2>AutoDrive Subscription</h2>
+          <p>Enjoy <strong>2 months free</strong>, then continue for just <strong>₹100/month</strong>.</p>
+        </div>
+        <div class="price-badge"><small>MONTHLY</small><strong>₹100</strong></div>
+      </div>
+
+      <div class="subscription-line">
+        <span class="line-dot"></span>
+        <div>
+          <strong>2 months free trial</strong>
+          <small>Then ₹100/month</small>
+        </div>
+        <span class="line-check">✓</span>
+      </div>
+
+      <div class="upi-box">
+        <div>
+          <small>PAY DIRECTLY VIA UPI</small>
+          <strong>8939717405@nyes</strong>
+        </div>
+        <button id="payUpi" class="upi-btn">Pay ₹100 via UPI</button>
+      </div>
+
+      <div class="payment-divider"><span>Payment confirmation</span></div>
+      <div class="screenshot-send-box">
+        <div>
+          <strong>Screenshot Sending</strong>
+          <small>Payment screenshot-ஐ WhatsApp மூலம் நேரடியாக அனுப்பலாம்.</small>
+        </div>
+        <a id="sendScreenshotWhatsApp" class="whatsapp-send-btn" href="#" target="_blank" rel="noopener">
+          💬 WhatsApp · 8939717405
+        </a>
+      </div>
+      <p id="paymentMsg" class="payment-msg"></p>
+    </div>
+  </section>
+</main>
+
+<div id="editModal" class="modal" aria-hidden="true">
+  <div class="modal-backdrop" id="closeEditBackdrop"></div>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="editTitle">
+    <div class="modal-head">
+      <div>
+        <span class="pill">Provider Card</span>
+        <h2 id="editTitle">Edit Card</h2>
+        <p class="muted">Update your provider and vehicle details.</p>
+      </div>
+      <button id="closeEdit" class="icon-btn" aria-label="Close">✕</button>
+    </div>
+    <form id="editForm">
+      <label>Full name<input id="editName" required></label>
+      <label>Phone number<input id="editPhone" required></label>
+      <label>Vehicle number<input id="editVehicle" required></label>
+      <label>Vehicle type<input id="editType" required></label>
+      <div class="modal-actions">
+        <button type="button" id="cancelEdit" class="ghost">Cancel</button>
+        <button type="submit">Save Changes</button>
+      </div>
+      <p id="editMsg" class="payment-msg"></p>
+    </form>
+  </div>
+</div>
+
+<script type="module" src="provider-dashboard.js"></script>
+</body>
+</html>
